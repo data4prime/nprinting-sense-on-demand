@@ -9,7 +9,7 @@ var connectionSection = {
 			expression: "optional"
 		},
 
-		jwtAuth: {
+		/*jwtAuth: {
 			ref: "npsod.conn.jwtAuth",
 			label: "JWT Auth",
 			type: "boolean",
@@ -63,7 +63,7 @@ var connectionSection = {
 			show: (data) => data?.npsod?.conn?.jwtAuth && data?.npsod?.conn?.jwtChannel === "serverJWT"
 		},
 
-		/*
+
 		ntlm: {
 			ref: "npsod.conn.ntlm",
 			type: "string",
@@ -74,7 +74,7 @@ var connectionSection = {
 		},*/
 
 		test: {
-			label: "Connect",
+			label: "Test Connect",
 			component: "button",
 			ref: "npsod.conn.ntlm",
 			action: function(data) {
