@@ -9,6 +9,25 @@ var connectionSection = {
 			expression: "optional"
 		},
 
+		request_method: {
+			type: "string",
+			component: "dropdown",
+			label: "Request Metod",
+			ref: "npsod.conn.requestMethod",
+			options: [
+				{
+					value: "GET",
+					label: "GET"
+				},
+				{
+					value: "POST",
+					label: "POST"
+				}
+			],
+			defaultValue: "GET",
+			show: (data) => data?.npsod?.conn?.requestMethod
+		},
+
 		/*jwtAuth: {
 			ref: "npsod.conn.jwtAuth",
 			label: "JWT Auth",
