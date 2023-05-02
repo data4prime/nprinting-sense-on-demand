@@ -1,6 +1,6 @@
 var connectionSection = {
 	type: "items",
-	label: "NPrinting Connection",
+	label: "QActive Connection",
 	items: {
 		server: {
 			ref: "npsod.conn.server",
@@ -71,7 +71,7 @@ var connectionSection = {
 			show: function(){
 				return false;
 			}
-		},
+		},*/
 
 		test: {
 			label: "Connect",
@@ -93,11 +93,10 @@ var connectionSection = {
 						alert("Connect Failed! Message:" + response.message + ' Code: (' + response.code + ')');
 					}
 				}).fail(function(e){
-					alert("Connect Failed! Pease check your connection.");		
+					alert("Connect Failed! Pease check your connection.");
 				});
 			}
 		},
-		*/
 
 		app: {
 			type: "string",
