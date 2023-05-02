@@ -32,7 +32,7 @@ define([
         $("<style>").html(css).appendTo("head");
         $("<style>").html(bootstrap).appendTo("head");
 
-        $(".qui-buttonset-right").prepend($("<button class='lui-button lui-button--toolbar iconToTheRight npsod-bar-btn'><span data-icon='toolbar-print'>NPrinting Reports</span></button>"));
+        $(".qui-buttonset-right").prepend($("<button class='lui-button lui-button--toolbar iconToTheRight npsod-bar-btn'><span data-icon='toolbar-print'>QActive Reports</span></button>"));
 
         var app = qlik.currApp();
         var currentSelections;
@@ -463,57 +463,57 @@ define([
             switch (type) {
                 //Tempate formats
                 case 'Excel':
-                    return '../extensions/nprinting-sense-on-demand/images/icon-template-excel.png';
+                    return '../extensions/qactive-sense-on-demand/images/icon-template-excel.png';
                 case 'PowerPoint':
-                    return '../extensions/nprinting-sense-on-demand/images/icon-template-ppt.png';
+                    return '../extensions/qactive-sense-on-demand/images/icon-template-ppt.png';
                 case 'Html':
-                    return '../extensions/nprinting-sense-on-demand/images/icon-template-html.png';
+                    return '../extensions/qactive-sense-on-demand/images/icon-template-html.png';
                 case 'Word':
-                    return '../extensions/nprinting-sense-on-demand/images/icon-template-word.png';
+                    return '../extensions/qactive-sense-on-demand/images/icon-template-word.png';
                 case 'QlikEntity':
-                    return '../extensions/nprinting-sense-on-demand/images/icon-template-qlik.png';
+                    return '../extensions/qactive-sense-on-demand/images/icon-template-qlik.png';
 
                 //Export formats
                 case 'PDF':
-                    return '../extensions/nprinting-sense-on-demand/images/icon-file-pdf.png';
+                    return '../extensions/qactive-sense-on-demand/images/icon-file-pdf.png';
                 case 'HTML':
-                    return '../extensions/nprinting-sense-on-demand/images/icon-file-html.png';
+                    return '../extensions/qactive-sense-on-demand/images/icon-file-html.png';
                 case 'DOC':
-                    return '../extensions/nprinting-sense-on-demand/images/icon-file-doc.png';
+                    return '../extensions/qactive-sense-on-demand/images/icon-file-doc.png';
 
                 case 'PPT':
-                    return '../extensions/nprinting-sense-on-demand/images/icon-file-ppt.png';
+                    return '../extensions/qactive-sense-on-demand/images/icon-file-ppt.png';
 
                 case 'XLS':
-                    return '../extensions/nprinting-sense-on-demand/images/icon-file-xls.png';
+                    return '../extensions/qactive-sense-on-demand/images/icon-file-xls.png';
 
                 case 'DOCX':
-                    return '../extensions/nprinting-sense-on-demand/images/icon-file-docx.png';
+                    return '../extensions/qactive-sense-on-demand/images/icon-file-docx.png';
 
                 case 'PPTX':
-                    return '../extensions/nprinting-sense-on-demand/images/icon-file-pptx.png';
+                    return '../extensions/qactive-sense-on-demand/images/icon-file-pptx.png';
 
                 case 'XLSX':
-                    return '../extensions/nprinting-sense-on-demand/images/icon-file-xlsx.png';
+                    return '../extensions/qactive-sense-on-demand/images/icon-file-xlsx.png';
 
                 case 'CSV':
-                    return '../extensions/nprinting-sense-on-demand/images/icon-file-csv.png';
+                    return '../extensions/qactive-sense-on-demand/images/icon-file-csv.png';
 
                 case 'JPEG':
-                    return '../extensions/nprinting-sense-on-demand/images/icon-file-jpeg.png';
+                    return '../extensions/qactive-sense-on-demand/images/icon-file-jpeg.png';
 
                 case 'PNG':
-                    return '../extensions/nprinting-sense-on-demand/images/icon-file-png.png';
+                    return '../extensions/qactive-sense-on-demand/images/icon-file-png.png';
 
                 case 'TIFF':
-                    return '../extensions/nprinting-sense-on-demand/images/icon-file-tiff.png';
+                    return '../extensions/qactive-sense-on-demand/images/icon-file-tiff.png';
                 case 'BMP':
-                    return '../extensions/nprinting-sense-on-demand/images/icon-file-bmp.png';
+                    return '../extensions/qactive-sense-on-demand/images/icon-file-bmp.png';
 
                 case 'LOADING':
-                    return '../extensions/nprinting-sense-on-demand/images/loading-gear.gif';
+                    return '../extensions/qactive-sense-on-demand/images/loading-gear.gif';
                 default:
-                    return '../extensions/nprinting-sense-on-demand/images/icon-template-pp.png';
+                    return '../extensions/qactive-sense-on-demand/images/icon-template-pp.png';
             }
         }
 
@@ -526,7 +526,7 @@ define([
 
             definition: {
                 type: "items",
-                label: "NPrinting On Demand",
+                label: "QActive On Demand",
                 component: "accordion",
                 items: {
                     connectionSection: connectionSection,
