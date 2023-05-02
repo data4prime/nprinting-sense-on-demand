@@ -2,7 +2,7 @@ define([
         "jquery",
         "qlik",
         "./js/properties",
-        "text!./css/nprinting-sense-on-demand.css",
+        "text!./css/qactive-sense-on-demand.css",
         "text!./css/bootstrap.css",
         "text!./template/view-main-single.html",
         "text!./template/view-popup.html",
@@ -36,7 +36,7 @@ define([
 
         var app = qlik.currApp();
         var currentSelections;
-       
+
 
 
         function getLoginNtlm(conn) {
@@ -102,7 +102,7 @@ define([
                 if (currUser.length === 1) {
                     currUser = user.split(";");
                 }
-                
+
                 return $.ajax({
                     url: URL,
                     method: 'GET',
@@ -615,7 +615,7 @@ define([
                         }, 1000);
 
                         $scope.go2OverviewStage(conn);
-                        
+
                     }
                 };
 
