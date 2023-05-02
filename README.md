@@ -1,12 +1,12 @@
-# The extension is back again with June 2018 Release. 
+# The extension is back again with June 2018 Release.
 With the latest update for this extension. The on-demand selection code has been adapted to Capability APIs, not relying on Qlik internal moduels any more.
 
 Please feel free to download the latest project and import into QMC. It will automatically work with any Qlik versions.
 
-It also resolves the problem with Qlik modules loading failure in mashups by the way. 
+It also resolves the problem with Qlik modules loading failure in mashups by the way.
 
-# nprinting-sense-on-demand
-NPrinting On-demand extension for Qlik Sense
+# qactive-sense-on-demand
+QActive On-demand extension for Qlik Sense
 
 ## Get Started:
 
@@ -38,7 +38,7 @@ NPrinting On-demand extension for Qlik Sense
 
 ## Self-Service Report
 
-1.A Printer icon-button is appended in the top when this extension is used. (Please just don't ask how :D ) 
+1.A Printer icon-button is appended in the top when this extension is used. (Please just don't ask how :D )
 
 ![alt tag](https://github.com/bohua/nprinting-sense-on-demand/blob/master/tutorial/11.png)
 
