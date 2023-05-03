@@ -28,6 +28,20 @@ var connectionSection = {
 			show: (data) => data?.npsod?.conn?.requestMethod
 		},
 
+		username: {
+			ref: "npsod.conn.username",
+			label: "Basic Auth Username",
+			type: "string"
+			//,show: (data) => data?.npsod?.conn?.username
+		},
+
+		password: {
+			ref: "npsod.conn.password",
+			label: "Basic Auth Password",
+			type: "string"
+			//,show: (data) => data?.npsod?.conn?.password
+		},
+
 		/*jwtAuth: {
 			ref: "npsod.conn.jwtAuth",
 			label: "JWT Auth",
@@ -95,54 +109,42 @@ var connectionSection = {
 		test: {
 			label: "Test Connect",
 			component: "button",
-			ref: "npsod.conn.ntlm",
+			ref: "npsod.conn.test",
 			action: function(data) {
-				//Test the connection by sending API request ntlm request
-				var URL = data.npsod.conn.server + 'api/v1/login/ntlm'
+				//Test the connection by sending API request
+				var URL = data.npsod.conn.server
+				var username = data.npsod.conn.username
+				var password = data.npsod.conn.password
+				var basic_auth = btoa(username+ ":" + password)
+				var request_met = data.npsod.conn.requestMethod;
 				$.ajax({
 					url: URL,
-					method: 'GET',
-					xhrFields: {
+					method: request_met,
+					crossDomain: true,
+					headers: {
+    					//"Authorization": "Basic " + basic_auth
+							Authorization : "Basic dnRlVXNyQ3JlZGVudGlhbDpUYzJlTGlhN3lTNWZDRDI="
+  				}
+					/*,xhrFields: {
 						withCredentials: true
-					}
+					}*/
 				}).done(function(response){
 					if(response.code == 0){
 						alert("Connect Succeed!");
+						console.log("Connect Succeed!");
 					}else {
 						alert("Connect Failed! Message:" + response.message + ' Code: (' + response.code + ')');
+						console.log("Connect Failed! Message:" + response.message + ' Code: (' + response.code + ')');
 					}
 				}).fail(function(e){
 					alert("Connect Failed! Pease check your connection.");
+					console.log("Credential " + btoa(username+ ":" + password));
+					console.log("Method " + request_met);
+					console.log("Connect Failed! Pease check your connection.");
 				});
 			}
 		},
 
-		app: {
-			type: "string",
-			component: "dropdown",
-			label: "Choose App",
-			ref: "npsod.conn.app",
-			options: function(data) {
-				const $scope = $(`#nprinting-object-${data.qInfo.qId}`).scope();
-				return $.ajax({
-					url: data.npsod.conn.server + 'api/v1/apps',
-					method: 'GET',
-					headers: {
-						Authorization: $scope.getJwtAuthToken(data.npsod.conn),
-					},
-					xhrFields: {
-						withCredentials: !$scope.getJwtAuthToken(data.npsod.conn),
-					}
-				}).then(function(response) {
-					return response.data.items.map(function(app) {
-						return {
-							value: app.id,
-							label: app.name
-						}
-					});
-				});
-			}
-		}
 	}
 };
 
@@ -172,34 +174,6 @@ var ReportSection ={
 						return {
 							value: report.id,
 							label: report.title
-						}
-					});
-				});
-			}
-		},
-
-		exportFormat: {
-			type: "string",
-			component: "dropdown",
-			label: "Default Export Format",
-			ref: "npsod.conn.exportFormat",
-			options: function(data) {
-				var requestUrl = data.npsod.conn.server + 'api/v1/reports' + '/' + data.npsod.conn.report;
-				const $scope = $(`#nprinting-object-${data.qInfo.qId}`).scope();
-				return $.ajax({
-					url: requestUrl,
-					method: 'GET',
-					headers: {
-						Authorization: $scope.getJwtAuthToken(data.npsod.conn),
-					},
-					xhrFields: {
-						withCredentials: !$scope.getJwtAuthToken(data.npsod.conn),
-					}
-				}).then(function(response) {
-					return response.data.outputFormats.map(function(format) {
-						return {
-							value: format,
-							label: format.toUpperCase()
 						}
 					});
 				});
