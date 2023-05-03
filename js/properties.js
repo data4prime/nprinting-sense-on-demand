@@ -122,8 +122,7 @@ var connectionSection = {
 					method: request_met,
 					crossDomain: true,
 					headers: {
-    					//"Authorization": "Basic " + basic_auth
-							Authorization : "Basic dnRlVXNyQ3JlZGVudGlhbDpUYzJlTGlhN3lTNWZDRDI="
+    					Authorization : "Basic " + basic_auth
   				}
 					/*,xhrFields: {
 						withCredentials: true
