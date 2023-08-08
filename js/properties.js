@@ -113,21 +113,37 @@ var connectionSection = {
 			action: function(data) {
 				//Test the connection by sending API request
 				var URL = data.npsod.conn.server
-				var username = data.npsod.conn.username
-				var password = data.npsod.conn.password
-				var basic_auth = btoa(username+ ":" + password)
+				var username1 = data.npsod.conn.username
+				var password1 = data.npsod.conn.password
+				//var basic_auth = btoa(username1+ ":" + password1)
 				var request_met = data.npsod.conn.requestMethod;
 				$.ajax({
 					url: URL,
-					method: request_met,
+					//method: request_met,
+					//method: 'POST',
+					type: 'POST',
+					//username : username1,
+					//password : password1,
+					data: 'content=',
+					dataType: 'jsonp',
 					crossDomain: true,
-					headers: {
-    					Authorization : "Basic " + basic_auth
-  				}
+					beforeSend: function (xhr) {
+      			xhr.setRequestHeader ("Authorization", "Basic " + btoa(username1 + ":" + password1));
+    			},
+					success: function(json) {
+        		alert("Success", json);
+    			},
+    			error: function(XMLHttpRequest, textStatus, errorThrown) {
+       			alert(textStatus, errorThrown);
+    			},
+					//type: request_met,
+
+
 					/*,xhrFields: {
 						withCredentials: true
 					}*/
-				}).done(function(response){
+				});
+				/*.done(function(response){
 					if(response.code == 0){
 						alert("Connect Succeed!");
 						console.log("Connect Succeed!");
@@ -140,7 +156,7 @@ var connectionSection = {
 					console.log("Credential " + btoa(username+ ":" + password));
 					console.log("Method " + request_met);
 					console.log("Connect Failed! Pease check your connection.");
-				});
+				});*/
 			}
 		},
 
